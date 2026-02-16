@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { Card } from "@/components/ui/Card";
+import { trackCTA } from "@/lib/analytics";
 
 interface Post {
     title: string;
@@ -28,7 +29,11 @@ export const BlogList = ({ posts }: BlogListProps) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                 >
-                    <Link href={`/blog/${post.slug}`} className="cursor-pointer block">
+                    <Link
+                        href={`/blog/${post.slug}`}
+                        className="cursor-pointer block"
+                        onClick={() => trackCTA(`Blog: ${post.title}`, "Blog List")}
+                    >
                         <Card className="overflow-hidden hover:border-blue-500/30 transition-all group border-white/5 bg-white/5">
                             <div className="grid md:grid-cols-5 gap-0">
                                 <div className="md:col-span-2 relative aspect-video md:aspect-auto">

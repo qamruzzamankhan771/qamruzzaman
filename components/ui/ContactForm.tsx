@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Send, CheckCircle2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/Button"
+import { trackCTA } from "@/lib/analytics"
 
 export const ContactForm = () => {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
@@ -27,6 +28,7 @@ export const ContactForm = () => {
 
             if (res.ok) {
                 setStatus("success")
+                trackCTA("Contact Form Submit", "Contact Page")
                 setFormData({ name: "", email: "", projectType: "AI Integration", message: "" })
             } else {
                 setStatus("error")

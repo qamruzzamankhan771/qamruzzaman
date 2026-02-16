@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight, Download, Calendar } from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import { trackCTA } from "@/lib/analytics";
 
 export const Hero = () => {
     const { scrollY } = useScroll();
@@ -58,6 +59,7 @@ export const Hero = () => {
                                     variant="gradient"
                                     className="rounded-full px-12 py-7 text-lg font-bold group shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 cursor-pointer"
                                     asChild
+                                    onClick={() => trackCTA("Work With Me", "Hero")}
                                 >
                                     <Link href="/contact" className="cursor-pointer">
                                         Work With Me

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { trackCTA } from "@/lib/analytics";
 
 const projects = [
     {
@@ -85,10 +87,18 @@ export const Projects = () => {
                                     {project.description}
                                 </p>
                                 <div className="flex items-center gap-4 mt-auto">
-                                    <Link href={project.link} className="flex items-center gap-2 text-xs font-bold text-white hover:text-blue-500 transition-colors">
+                                    <Link
+                                        href={project.link}
+                                        className="flex items-center gap-2 text-xs font-bold text-white hover:text-blue-500 transition-colors"
+                                        onClick={() => trackCTA(`Project: ${project.title}`, "Projects Section")}
+                                    >
                                         LIVE DEMO <ArrowUpRight size={14} />
                                     </Link>
-                                    <Link href={project.github} className="text-muted-foreground hover:text-white transition-colors">
+                                    <Link
+                                        href={project.github}
+                                        className="text-muted-foreground hover:text-white transition-colors"
+                                        onClick={() => trackCTA(`GitHub: ${project.title}`, "Projects Section")}
+                                    >
                                         <Github size={18} />
                                     </Link>
                                 </div>
@@ -100,4 +110,3 @@ export const Projects = () => {
         </Section>
     );
 };
-import Link from "next/link";
