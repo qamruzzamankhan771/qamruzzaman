@@ -29,7 +29,9 @@
     "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
+    "@next/third-parties": "^16.1.6",
     "@tailwindcss/postcss": "^4",
+    "@types/gtag.js": "^0.0.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

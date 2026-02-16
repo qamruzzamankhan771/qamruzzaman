@@ -1,15 +1,17 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Section } from "@/components/ui/Section"
 import { Card } from "@/components/ui/Card"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Mail, MessageSquare } from "lucide-react"
 import { ContactForm } from "@/components/ui/ContactForm"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Contact | Hire AI-Enabled Backend Developer",
+    description: "Get in touch for AI integrations, backend architecture, or WordPress automation projects. Available for consultations and long-term contracts.",
+}
 
 export default function ContactPage() {
-
     return (
         <>
             <Navbar />
@@ -17,21 +19,12 @@ export default function ContactPage() {
                 <Section>
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-16">
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-4xl md:text-6xl font-bold font-outfit mb-6"
-                            >
+                            <h1 className="text-4xl md:text-6xl font-bold font-outfit mb-6">
                                 Start Your <span className="text-blue-500">Project</span>
-                            </motion.h1>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 }}
-                                className="text-xl text-muted-foreground max-w-2xl mx-auto"
-                            >
+                            </h1>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                                 Ready to build something powerful? Fill out the form below or reach out directly via email or WhatsApp.
-                            </motion.p>
+                            </p>
                         </div>
 
                         <div className="grid lg:grid-cols-3 gap-12">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,16 +15,52 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Qamruzzaman Khan | AI-Enabled Backend Developer",
-  description: "Senior Backend Developer specializing in Node.js, AI integrations, and WordPress automation. Building high-performance, scalable solutions.",
-  keywords: ["Backend Developer", "AI Integration", "Node.js", "WordPress Automation", "SaaS Developer", "Qamruzzaman Khan"],
+  metadataBase: new URL("https://qamruzzaman.me"),
+  title: {
+    default: "Qamruzzaman Khan | AI-Enabled Backend Developer",
+    template: "%s | Qamruzzaman Khan"
+  },
+  description: "Senior Backend Developer specializing in Node.js, AI integrations, and WordPress automation. Building high-performance, scalable solutions for SaaS startups.",
+  keywords: [
+    "Backend Developer",
+    "AI Integration",
+    "Node.js Expert",
+    "WordPress Automation",
+    "SaaS Developer",
+    "Qamruzzaman Khan",
+    "RAG Implementation",
+    "Backend Architecture"
+  ],
   authors: [{ name: "Qamruzzaman Khan" }],
+  creator: "Qamruzzaman Khan",
+  publisher: "Qamruzzaman Khan",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: "Qamruzzaman Khan | AI-Enabled Backend Developer",
-    description: "Expert Backend & AI Automation Services.",
-    type: "website",
+    description: "Expert Backend & AI Automation Services for SaaS startups. Node.js, AI, and WordPress specialist.",
+    url: "https://qamruzzaman.me",
+    siteName: "Qamruzzaman Khan Portfolio",
     locale: "en_US",
-    url: "https://qkhan.dev", // Placeholder
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Qamruzzaman Khan | AI-Enabled Backend Developer",
+    description: "Expert Backend & AI Automation Services.",
+    creator: "@qamruzzaman", // Placeholder
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -41,6 +78,7 @@ export default function RootLayout({
           outfit.variable
         )}
       >
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <div className="relative flex min-h-screen flex-col">
           <main className="flex-1">{children}</main>
         </div>
