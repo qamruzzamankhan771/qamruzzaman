@@ -56,10 +56,10 @@ export const Hero = () => {
                                 <Button
                                     size="lg"
                                     variant="gradient"
-                                    className="rounded-full px-12 py-7 text-lg font-bold group shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
+                                    className="rounded-full px-12 py-7 text-lg font-bold group shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 cursor-pointer"
                                     asChild
                                 >
-                                    <Link href="/contact">
+                                    <Link href="/contact" className="cursor-pointer">
                                         Work With Me
                                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                     </Link>

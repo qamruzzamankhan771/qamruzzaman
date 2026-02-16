@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@layer base {
+
+  a,
+  button,
+  [role="button"],
+  select,
+  input[type="submit"] {
+    cursor: pointer;
+  }
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
