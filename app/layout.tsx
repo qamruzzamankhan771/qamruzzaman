@@ -16,7 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://qamruzzaman.me"),
+  metadataBase: new URL("https://qamruzzaman.in"),
   title: {
     default: "Qamruzzaman Khan | AI-Enabled Backend Developer",
     template: "%s | Qamruzzaman Khan"
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Qamruzzaman Khan | AI-Enabled Backend Developer",
     description: "Expert Backend & AI Automation Services for SaaS startups. Node.js, AI, and WordPress specialist.",
-    url: "https://qamruzzaman.me",
+    url: "https://qamruzzaman.in",
     siteName: "Qamruzzaman Khan Portfolio",
     locale: "en_US",
     type: "website",
