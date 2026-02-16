@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { PostHogProvider } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,9 +80,11 @@ export default function RootLayout({
         )}
       >
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
-        <div className="relative flex min-h-screen flex-col">
-          <main className="flex-1">{children}</main>
-        </div>
+        <PostHogProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <main className="flex-1">{children}</main>
+          </div>
+        </PostHogProvider>
       </body>
     </html>
   );
